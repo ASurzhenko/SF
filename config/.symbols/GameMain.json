@@ -1,0 +1,73 @@
+{
+    "properties": [], 
+    "externalReferences": [], 
+    "innerClasses": [], 
+    "interfaces": [], 
+    "constructors": [], 
+    "namespace": null, 
+    "name": "GameMain", 
+    "tableDeclaration": {
+        "type": "GameMain", 
+        "modifiers": [
+            "public"
+        ], 
+        "references": [], 
+        "location": {
+            "column": 14, 
+            "line": 1
+        }, 
+        "name": "GameMain"
+    }, 
+    "key": "01p58000006FEzdAAG", 
+    "variables": [
+        {
+            "type": "Unit", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 8, 
+                "line": 3
+            }, 
+            "name": "fess"
+        }, 
+        {
+            "type": "Unit", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 8, 
+                "line": 4
+            }, 
+            "name": "etlau"
+        }, 
+        {
+            "type": "Game", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 8, 
+                "line": 5
+            }, 
+            "name": "game"
+        }
+    ], 
+    "id": "01p58000006FEzdAAG", 
+    "methods": [
+        {
+            "modifiers": [
+                "static", 
+                "public"
+            ], 
+            "name": "main", 
+            "parameters": [], 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 21, 
+                "line": 2
+            }, 
+            "returnType": "void", 
+            "type": null
+        }
+    ]
+}

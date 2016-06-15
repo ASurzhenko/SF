@@ -1,0 +1,19 @@
+{
+    "username": "alexandr@provectus.com", 
+    "environment": "developer", 
+    "project_name": "FightGame", 
+    "workspace": "D:\\workspace\\salesforce", 
+    "org_url": "", 
+    "namespace": "", 
+    "id": "L8LJ3EO7M9VLYFBPGVOJZRB46GWHCJOC", 
+    "metadata_container": "1dc58000000IDXaAAO", 
+    "subscription": [
+        "ApexClass", 
+        "ApexComponent", 
+        "ApexPage", 
+        "ApexTrigger", 
+        "CustomObject", 
+        "Profile", 
+        "StaticResource"
+    ]
+}

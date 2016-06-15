@@ -1,0 +1,605 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"uni",
+				"unit1"
+			],
+			[
+				"get",
+				"PUBLIC getName() 	String"
+			],
+			[
+				"unit",
+				"unit2"
+			],
+			[
+				"ra",
+				"randomHit"
+			],
+			[
+				"dm",
+				"dmgMax"
+			],
+			[
+				"d",
+				"dmgMin"
+			],
+			[
+				"su",
+				"sublime_text"
+			],
+			[
+				"mm_w",
+				"mm_windows_subl_location"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "src/classes/Game.cls",
+			"settings":
+			{
+				"buffer_size": 1541,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/classes/Unit.cls",
+			"settings":
+			{
+				"buffer_size": 746,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/classes/GameMain.cls",
+			"settings":
+			{
+				"buffer_size": 213,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/pages/GamePage.page",
+			"settings":
+			{
+				"buffer_size": 1330,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "\n  BRANCH:  Initial commit on `у`.\n  ROOT:    D:/workspace/salesforce/FightGame\n  HEAD:    No commits yet.\n\n  UNSTAGED:\n    FightGame.sublime-workspace\n    config/.local_store\n    config/.session\n    src/classes/Game.cls\n    src/classes/Unit.cls\n\n  UNTRACKED:\n    config/.symbols/\n    src/classes/COMMIT_EDITMSG.COMMIT_EDITMSG\n    src/classes/mm.log\n    src/pages/\n\n  STAGED:\n    FightGame.sublime-project\n    FightGame.sublime-settings\n    FightGame.sublime-workspace\n    config/.apex_script\n    config/.debug\n    config/.describe\n    config/.local_store\n    config/.session\n    config/.settings\n    src/classes/Game.cls\n    src/classes/Game.cls-meta.xml\n    src/classes/GameMain.cls\n    src/classes/GameMain.cls-meta.xml\n    src/classes/Unit.cls\n    src/classes/Unit.cls-meta.xml\n    src/package.xml\n\n  ###################                   ###############\n  ## SELECTED FILE ##                   ## ALL FILES ##\n  ###################                   ###############\n\n  [o] open file                         [a] stage all unstaged files\n  [s] stage file                        [A] stage all unstaged and untracked files\n  [u] unstage file                      [U] unstage all staged files\n  [d] discard changes to file           [D] discard all unstaged changes\n  [h] open file on remote\n  [M] launch external merge tool for conflict\n\n  [l] diff file inline                  [f] diff all files\n  [e] diff file                         [F] diff all cached files\n\n  #############                         #############\n  ## ACTIONS ##                         ## STASHES ##\n  #############                         #############\n\n  [c] commit                            [t][a] apply stash\n  [C] commit, including unstaged        [t][p] pop stash\n  [m] amend previous commit             [t][s] show stash\n  [P] push current branch               [t][c] create stash\n                                        [t][u] create stash including untracked files\n  [i] ignore file                       [t][d] discard stash\n  [I] ignore pattern\n\n  ###########\n  ## OTHER ##\n  ###########\n\n  [r]         refresh status\n  [tab]       transition to next dashboard\n  [SHIFT-tab] transition to previous dashboard\n  [.]         move cursor to next file\n  [,]         move cursor to previous file\n\n-\n",
+			"settings":
+			{
+				"buffer_size": 2278,
+				"line_ending": "Windows",
+				"name": "STATUS: FightGame",
+				"read_only": true,
+				"scratch": true
+			}
+		},
+		{
+			"contents": "\n  BRANCH:  Initial commit on `branch`.\n  ROOT:    D:/workspace/salesforce/FightGame\n  HEAD:    No commits yet.\n\n  LOCAL:\n\n\n  ** Press [e] to toggle display of remote branches. **\n\n  #############\n  ## ACTIONS ##\n  #############\n\n  [c] checkout                                  [p] push selected to remote\n  [b] create new branch (from HEAD)             [P] push all branches to remote\n  [d] delete                                    [D] delete (force)\n  [R] rename (local)                            [m] merge selected into active branch\n  [t] configure tracking                        [M] fetch and merge into active branch\n  [o] checkout remote as local                  [h] fetch remote branches\n\n  [f] diff against active\n  [H] diff history against active\n  [E] edit branch description\n\n  [e]         toggle display of remote branches\n  [tab]       transition to next dashboard\n  [SHIFT-tab] transition to previous dashboard\n  [r]         refresh\n\n-\n",
+			"settings":
+			{
+				"buffer_size": 955,
+				"line_ending": "Windows",
+				"name": "BRANCHES: FightGame",
+				"read_only": true,
+				"scratch": true
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 354.0,
+		"last_filter": "pu",
+		"selected_items":
+		[
+			[
+				"pu",
+				"git: push"
+			],
+			[
+				"re",
+				"git: remote add"
+			],
+			[
+				"branch ",
+				"git: branch"
+			],
+			[
+				"sta",
+				"git: status"
+			],
+			[
+				"gi",
+				"git: push"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"remote",
+				"Git: Track Remote Branch"
+			],
+			[
+				"git remo",
+				"Git: Track Remote Branch"
+			],
+			[
+				"push",
+				"Git: Push"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"git br",
+				"git: branch"
+			],
+			[
+				"git push ",
+				"git: push all tags"
+			],
+			[
+				"com",
+				"Git: Commit"
+			],
+			[
+				"git branch",
+				"git: branch"
+			],
+			[
+				"pus",
+				"Git: Push"
+			],
+			[
+				"git",
+				"git: push"
+			],
+			[
+				"sa",
+				"Salesforce Reference - Apex"
+			],
+			[
+				"p",
+				"Git: Push"
+			],
+			[
+				"git re",
+				"git: reset"
+			],
+			[
+				"add",
+				"Git: Add..."
+			],
+			[
+				"a",
+				"git: add (edit)"
+			],
+			[
+				"qu",
+				"git: quick commit"
+			],
+			[
+				"qui",
+				"git: quick commit"
+			],
+			[
+				"gia",
+				"git: add (edit)"
+			],
+			[
+				"i",
+				"Package Control: Install Package"
+			],
+			[
+				"git a",
+				"git: add (edit)"
+			],
+			[
+				"ape",
+				"MavensMate: New Apex Class"
+			],
+			[
+				"new",
+				"MavensMate: New Project..."
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 462.0
+	},
+	"console":
+	{
+		"height": 277.0,
+		"history":
+		[
+			"git remote add https://github.com/ASurzhenko/Salesforce.git",
+			"git push github master:master",
+			"git push -u github master",
+			"https://github.com/ASurzhenko/Salesforce",
+			"$ git remote add origin git@github.com:ASurzhenko/Salesforce.git",
+			"if [ \"$TRAVIS\" == \"true\" ];",
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/D/workspace/salesforce/FightGame",
+		"/D/workspace/salesforce/FightGame/src",
+		"/D/workspace/salesforce/FightGame/src/classes"
+	],
+	"file_history":
+	[
+		"/D/workspace/salesforce/FightGame/src/classes/COMMIT_EDITMSG.COMMIT_EDITMSG",
+		"/D/workspace/salesforce/TestProject/src/classes/Unit.cls",
+		"/D/workspace/salesforce/TestProject/src/classes/GameMain.cls",
+		"/D/workspace/salesforce/TestProject/src/classes/Game.cls",
+		"/D/workspace/salesforce/TestProject/src/classes/apexWorkbook.cls-meta.xml",
+		"/D/workspace/salesforce/TestProject/src/classes/apexWorkbook.cls",
+		"/D/workspace/salesforce/TestProject/TestProject.sublime-settings",
+		"/C/Users/Александр/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/C/Users/Александр/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/D/workspace/salesforce/TestProject/src/classes/MyApexClass.cls",
+		"/D/workspace/salesforce/TestProject/src/classes/Road.cls",
+		"/C/Users/Александр/AppData/Roaming/Sublime Text 3/Packages/User/mavensmate.sublime-settings",
+		"/C/Users/Александр/AppData/Roaming/Sublime Text 3/Packages/MavensMate/mavensmate.sublime-settings"
+	],
+	"find":
+	{
+		"height": 28.0
+	},
+	"find_in_files":
+	{
+		"height": 158.0,
+		"where_history":
+		[
+			"D:\\workspace\\salesforce\\TestProject\\src\\classes"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"OlderAccountsUtility",
+			"account",
+			"git ",
+			"git"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 3,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "src/classes/Game.cls",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1541,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1497,
+								1497
+							]
+						],
+						"settings":
+						{
+							"git_savvy.file_path": "D:\\workspace\\salesforce\\FightGame\\src\\classes\\Game.cls",
+							"git_savvy.repo_path": "D:/workspace/salesforce/FightGame",
+							"syntax": "Packages/MavensMate/sublime/lang/Apex.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 252.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/classes/Unit.cls",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 746,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								425,
+								425
+							]
+						],
+						"settings":
+						{
+							"git_savvy.file_path": "D:\\workspace\\salesforce\\FightGame\\src\\classes\\Unit.cls",
+							"git_savvy.repo_path": "D:/workspace/salesforce/FightGame",
+							"syntax": "Packages/MavensMate/sublime/lang/Apex.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 63.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "src/classes/GameMain.cls",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 213,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"git_savvy.file_path": "D:\\workspace\\salesforce\\FightGame\\src\\classes\\GameMain.cls",
+							"git_savvy.repo_path": "D:/workspace/salesforce/FightGame",
+							"syntax": "Packages/MavensMate/sublime/lang/Apex.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "src/pages/GamePage.page",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1330,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								447,
+								447
+							]
+						],
+						"settings":
+						{
+							"git_savvy.file_path": "D:\\workspace\\salesforce\\FightGame\\src\\pages\\GamePage.page",
+							"git_savvy.repo_path": "D:/workspace/salesforce/FightGame",
+							"syntax": "Packages/MavensMate/sublime/lang/Visualforce.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2278,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								13,
+								13
+							]
+						],
+						"settings":
+						{
+							"__vi_external_disable": true,
+							"git_savvy.interface": "status",
+							"git_savvy.repo_path": "D:/workspace/salesforce/FightGame",
+							"git_savvy.status_view": true,
+							"git_savvy.tabbable": true,
+							"syntax": "Packages/GitSavvy/syntax/status.sublime-syntax",
+							"tab_size": 2,
+							"word_wrap": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 693.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 955,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"__vi_external_disable": true,
+							"git_savvy.branch_view": true,
+							"git_savvy.interface": "branch",
+							"git_savvy.repo_path": "D:/workspace/salesforce/FightGame",
+							"git_savvy.tabbable": true,
+							"syntax": "Packages/GitSavvy/syntax/branch.sublime-syntax",
+							"tab_size": 2,
+							"word_wrap": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 28.0
+	},
+	"input":
+	{
+		"height": 66.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.GitSavvy":
+	{
+		"height": 150.0
+	},
+	"output.MavensMate-OutputPanel":
+	{
+		"height": 150.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.git":
+	{
+		"height": 156.0
+	},
+	"pinned_build_system": "",
+	"project": "FightGame.sublime-project",
+	"replace":
+	{
+		"height": 52.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 140.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 374.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 311.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

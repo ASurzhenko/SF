@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:ns0="urn:partner.soap.sforce.com" xmlns:ns1="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tns="urn:partner.soap.sforce.com" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+   <SOAP-ENV:Header>
+      <tns:SessionHeader>
+         <tns:sessionId>00D58000000bH0h!AR8AQGCHNMvBTq0hs34aZUZ5PIZIoS4zFoazDKohEl.VQ8yCuplMvKZLuf6mS6LR4S1HAiyG9The6n7UudhTwd1igTdqK.wB</tns:sessionId>
+      </tns:SessionHeader>
+   </SOAP-ENV:Header>
+   <ns1:Body>
+      <ns0:getUserInfo/>
+   </ns1:Body>
+</SOAP-ENV:Envelope>
+Starting new HTTPS connection (1): eu6.salesforce.com
+Starting new HTTPS connection (1): eu6.salesforce.com
+Starting new HTTPS connection (1): eu6.salesforce.com
+Starting new HTTPS connection (1): eu6.salesforce.com
+Starting new HTTPS connection (1): eu6.salesforce.com
+Starting new HTTPS connection (1): eu6.salesforce.com
+Starting new HTTPS connection (1): eu6.salesforce.com
+Starting new HTTPS connection (1): eu6.salesforce.com
+Starting new HTTPS connection (1): eu6.salesforce.com
+Starting new HTTPS connection (1): eu6.salesforce.com
+Starting new HTTPS connection (1): eu6.salesforce.com
+Starting new HTTPS connection (1): eu6.salesforce.com
+Starting new HTTPS connection (1): eu6.salesforce.com
+Starting new HTTPS connection (1): eu6.salesforce.com
+Starting new HTTPS connection (1): eu6.salesforce.com
+Starting new HTTPS connection (1): eu6.salesforce.com
+Starting new HTTPS connection (1): eu6.salesforce.com
+Starting new HTTPS connection (1): eu6.salesforce.com
+Starting new HTTPS connection (1): eu6.salesforce.com
+Starting new HTTPS connection (1): eu6.salesforce.com
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:ns0="urn:partner.soap.sforce.com" xmlns:ns1="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tns="urn:partner.soap.sforce.com" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+   <SOAP-ENV:Header>
+      <tns:SessionHeader>
+         <tns:sessionId>00D58000000bH0h!AR8AQHImAsPDw.iWB_BrUxUh4wW39YYKcRE8KZut5oI1jzizrWhoFRQk7InOoIw1XOckVHnGuhr40cb69DY4hJFg95.ebV2B</tns:sessionId>
+      </tns:SessionHeader>
+   </SOAP-ENV:Header>
+   <ns1:Body>
+      <ns0:getUserInfo/>
+   </ns1:Body>
+</SOAP-ENV:Envelope>
+Starting new HTTPS connection (1): eu6.salesforce.com
+Starting new HTTPS connection (1): eu6.salesforce.com
+Starting new HTTPS connection (1): eu6.salesforce.com
+Starting new HTTPS connection (1): eu6.salesforce.com

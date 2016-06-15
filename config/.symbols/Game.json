@@ -1,0 +1,208 @@
+{
+    "properties": [
+        {
+            "modifiers": [
+                "private"
+            ], 
+            "name": "fess", 
+            "visibility": "PRIVATE", 
+            "references": [], 
+            "location": {
+                "column": 7, 
+                "line": 2
+            }, 
+            "type": "Unit"
+        }, 
+        {
+            "modifiers": [
+                "private"
+            ], 
+            "name": "etlau", 
+            "visibility": "PRIVATE", 
+            "references": [], 
+            "location": {
+                "column": 7, 
+                "line": 3
+            }, 
+            "type": "Unit"
+        }, 
+        {
+            "modifiers": [
+                "private"
+            ], 
+            "name": "damage", 
+            "visibility": "PRIVATE", 
+            "references": [], 
+            "location": {
+                "column": 18, 
+                "line": 4
+            }, 
+            "type": "Integer"
+        }, 
+        {
+            "modifiers": [
+                "private"
+            ], 
+            "name": "round", 
+            "visibility": "PRIVATE", 
+            "references": [], 
+            "location": {
+                "column": 21, 
+                "line": 5
+            }, 
+            "type": "Integer"
+        }
+    ], 
+    "externalReferences": [], 
+    "innerClasses": [], 
+    "interfaces": [], 
+    "constructors": [
+        {
+            "modifiers": [
+                "public"
+            ], 
+            "name": "Game", 
+            "parameters": [
+                {
+                    "type": "Unit", 
+                    "name": "fess"
+                }, 
+                {
+                    "type": "Unit", 
+                    "name": "etlau"
+                }
+            ], 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 9, 
+                "line": 7
+            }, 
+            "type": null
+        }
+    ], 
+    "namespace": null, 
+    "name": "Game", 
+    "tableDeclaration": {
+        "type": "Game", 
+        "modifiers": [
+            "public"
+        ], 
+        "references": [], 
+        "location": {
+            "column": 14, 
+            "line": 1
+        }, 
+        "name": "Game"
+    }, 
+    "key": "01p58000006FFCQAA4", 
+    "variables": [
+        {
+            "type": "Unit", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 19, 
+                "line": 7
+            }, 
+            "name": "fess"
+        }, 
+        {
+            "type": "Unit", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 30, 
+                "line": 7
+            }, 
+            "name": "etlau"
+        }, 
+        {
+            "type": "Unit", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 26, 
+                "line": 12
+            }, 
+            "name": "unit"
+        }, 
+        {
+            "type": "Integer", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 11, 
+                "line": 15
+            }, 
+            "name": "miss"
+        }, 
+        {
+            "type": "Unit", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 25, 
+                "line": 25
+            }, 
+            "name": "unit1"
+        }, 
+        {
+            "type": "Unit", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 37, 
+                "line": 25
+            }, 
+            "name": "unit2"
+        }
+    ], 
+    "id": "01p58000006FFCQAA4", 
+    "methods": [
+        {
+            "modifiers": [
+                "public"
+            ], 
+            "name": "hit", 
+            "parameters": [
+                {
+                    "type": "Unit", 
+                    "name": "unit"
+                }
+            ], 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 17, 
+                "line": 12
+            }, 
+            "returnType": "Integer", 
+            "type": null
+        }, 
+        {
+            "modifiers": [
+                "public"
+            ], 
+            "name": "fight", 
+            "parameters": [
+                {
+                    "type": "Unit", 
+                    "name": "unit1"
+                }, 
+                {
+                    "type": "Unit", 
+                    "name": "unit2"
+                }
+            ], 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 14, 
+                "line": 25
+            }, 
+            "returnType": "void", 
+            "type": null
+        }
+    ]
+}

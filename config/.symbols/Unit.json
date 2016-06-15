@@ -1,0 +1,255 @@
+{
+    "properties": [
+        {
+            "modifiers": [
+                "private"
+            ], 
+            "name": "name", 
+            "visibility": "PRIVATE", 
+            "references": [], 
+            "location": {
+                "column": 17, 
+                "line": 2
+            }, 
+            "type": "String"
+        }, 
+        {
+            "modifiers": [
+                "private"
+            ], 
+            "name": "hp", 
+            "visibility": "PRIVATE", 
+            "references": [], 
+            "location": {
+                "column": 18, 
+                "line": 3
+            }, 
+            "type": "Integer"
+        }, 
+        {
+            "modifiers": [
+                "private"
+            ], 
+            "name": "dmgMin", 
+            "visibility": "PRIVATE", 
+            "references": [], 
+            "location": {
+                "column": 18, 
+                "line": 4
+            }, 
+            "type": "Integer"
+        }, 
+        {
+            "modifiers": [
+                "private"
+            ], 
+            "name": "dmgMax", 
+            "visibility": "PRIVATE", 
+            "references": [], 
+            "location": {
+                "column": 18, 
+                "line": 5
+            }, 
+            "type": "Integer"
+        }, 
+        {
+            "modifiers": [
+                "public"
+            ], 
+            "name": "getName", 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 16, 
+                "line": 14
+            }, 
+            "type": "String"
+        }
+    ], 
+    "externalReferences": [], 
+    "innerClasses": [], 
+    "interfaces": [], 
+    "constructors": [
+        {
+            "modifiers": [
+                "public"
+            ], 
+            "name": "Unit", 
+            "parameters": [
+                {
+                    "type": "String", 
+                    "name": "name"
+                }, 
+                {
+                    "type": "Integer", 
+                    "name": "hp"
+                }, 
+                {
+                    "type": "Integer", 
+                    "name": "dmgMin"
+                }, 
+                {
+                    "type": "Integer", 
+                    "name": "dmgMax"
+                }
+            ], 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 12, 
+                "line": 7
+            }, 
+            "type": null
+        }
+    ], 
+    "namespace": null, 
+    "name": "Unit", 
+    "tableDeclaration": {
+        "type": "Unit", 
+        "modifiers": [
+            "public"
+        ], 
+        "references": [], 
+        "location": {
+            "column": 14, 
+            "line": 1
+        }, 
+        "name": "Unit"
+    }, 
+    "key": "01p58000006FEvBAAW", 
+    "variables": [
+        {
+            "type": "String", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 24, 
+                "line": 7
+            }, 
+            "name": "name"
+        }, 
+        {
+            "type": "Integer", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 38, 
+                "line": 7
+            }, 
+            "name": "hp"
+        }, 
+        {
+            "type": "Integer", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 50, 
+                "line": 7
+            }, 
+            "name": "dmgMin"
+        }, 
+        {
+            "type": "Integer", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 66, 
+                "line": 7
+            }, 
+            "name": "dmgMax"
+        }, 
+        {
+            "type": "Integer", 
+            "modifiers": [], 
+            "references": [], 
+            "location": {
+                "column": 31, 
+                "line": 23
+            }, 
+            "name": "hp"
+        }
+    ], 
+    "id": "01p58000006FEvBAAW", 
+    "methods": [
+        {
+            "modifiers": [
+                "public"
+            ], 
+            "name": "getHp", 
+            "parameters": [], 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 20, 
+                "line": 19
+            }, 
+            "returnType": "Integer", 
+            "type": null
+        }, 
+        {
+            "modifiers": [
+                "public"
+            ], 
+            "name": "setHp", 
+            "parameters": [
+                {
+                    "type": "Integer", 
+                    "name": "hp"
+                }
+            ], 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 17, 
+                "line": 23
+            }, 
+            "returnType": "void", 
+            "type": null
+        }, 
+        {
+            "modifiers": [
+                "public"
+            ], 
+            "name": "getDmgMin", 
+            "parameters": [], 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 20, 
+                "line": 27
+            }, 
+            "returnType": "Integer", 
+            "type": null
+        }, 
+        {
+            "modifiers": [
+                "public"
+            ], 
+            "name": "getDmgMax", 
+            "parameters": [], 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 20, 
+                "line": 31
+            }, 
+            "returnType": "Integer", 
+            "type": null
+        }, 
+        {
+            "modifiers": [
+                "public"
+            ], 
+            "name": "getName", 
+            "parameters": [], 
+            "visibility": "PUBLIC", 
+            "references": [], 
+            "location": {
+                "column": 19, 
+                "line": 35
+            }, 
+            "returnType": "String", 
+            "type": null
+        }
+    ]
+}
