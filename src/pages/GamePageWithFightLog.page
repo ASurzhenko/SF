@@ -1,0 +1,32 @@
+<apex:page controller="GameControllerWithFightLog"> 
+    <apex:form >
+        <apex:pageBlock title="Set the parameters for fighters">
+            <apex:pageBlockSection columns="2" >
+              
+                <apex:inputtext label="Fighter 1 Name" value="{!fighter1.Name}" />
+                <apex:inputtext label="Fighter 2 Name" value="{!fighter2.Name}" />
+                <apex:inputtext label="Fighter 1 HP" value="{!fighter1.Hp}" />
+                <apex:inputtext label="Fighter 2 HP" value="{!fighter2.Hp}" />
+            
+                <apex:inputtext label="Fighter 1 dmgMin" value="{!fighter1.DmgMin}" />
+                <apex:inputtext label="Fighter 2 dmgMin" value="{!fighter2.DmgMin}" />
+                <apex:inputtext label="Fighter 1 DmgMax" value="{!fighter1.DmgMax}" /> 
+                <apex:inputtext label="Fighter 2 DmgMax" value="{!fighter2.DmgMax}" /> 
+            </apex:pageBlockSection>           
+            
+            <apex:pageBlockButtons location="bottom">
+                <apex:commandButton value="Fight!" action="{!fight}" accesskey="Enter" rerender="Log"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+    
+    <apex:outputPanel id="Log">
+        <apex:form >
+            <apex:pageBlock title="Game Log" >
+                <apex:dataList value="{!game.fightlog}" var="fightlog">
+                    <apex:outputText value="{!fightlog}"/>
+                </apex:dataList>
+            </apex:pageBlock>
+        </apex:form>
+    </apex:outputPanel>
+</apex:page>
