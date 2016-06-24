@@ -2,7 +2,7 @@
     <apex:form >
         <apex:outputPanel id="panel">
             <apex:pageBlock title="Welcome to Fight Club">
-                Select 2 fighters or create the new one
+                <h3>{!message}</h3>
                 <apex:pageBlockButtons >
                     <apex:commandButton value="Add new" action="{!addFighter}" rerender="panel" disabled="{!isVisible}"/>
                     <apex:commandButton value="Fight!" action="{!goFight}" rerender="panel" disabled="{!isVisible}"/>
@@ -55,8 +55,26 @@
                                 <apex:column value="{!item}"/>       
                         </apex:pageblockTable>
                     </apex:pageBlock>
-                </apex:outputPanel> 
-    
+                </apex:outputPanel>
+                
+                <apex:pageBlock rendered="{!isFight}">
+                    <apex:pageBlockSection >
+                        <apex:selectRadio value="{!hit}" >
+                            <apex:selectOptions value="{!place}"/>
+                        </apex:selectRadio><p/>
+                        <apex:selectRadio value="{!block}" >
+                            <apex:selectOptions value="{!place}"/>
+                        </apex:selectRadio><p/>
+                        <apex:commandButton value="Make hit!" action="{!makeHit}" rerender="panel"/>  
+                    </apex:pageBlockSection>
+                </apex:pageBlock>
+                
+                <apex:outputPanel >
+                    <apex:outputPanel > 
+                        <apex:outputText value="{!log}"/> 
+                    </apex:outputPanel> 
+                </apex:outputPanel>
+                     
             </apex:pageBlock>
         </apex:outputPanel>        
     </apex:form>
