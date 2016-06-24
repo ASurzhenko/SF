@@ -1,9 +1,9 @@
+/**
+*This is a custom controller of the VF Page Game
+*/
+
 public class GameController {
 
-    /*
-    *This is a custom controller of the VF Page Game
-    */
-    
     public Unit__c winner1{get;set;}
     public Unit__c winner2{get;set;}
     public Unit__c unit {get;set;}
