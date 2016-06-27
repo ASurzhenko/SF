@@ -1,7 +1,3 @@
-/**
-* Unit class definds game fighters
-*/
-
 public class Unit 
 {
     public String name{get;set;}

@@ -49,20 +49,20 @@
                     </apex:pageBlock>
                 </apex:outputPanel>
                 
-                <apex:outputPanel rendered="{!isFightLog}">
+        <!--    <apex:outputPanel rendered="{!isFightLog}">
                     <apex:pageBlock title="Fight Log">  
                         <apex:pageblockTable value="{!fightLog}" var="item">    
                                 <apex:column value="{!item}"/>       
                         </apex:pageblockTable>
                     </apex:pageBlock>
-                </apex:outputPanel>
+                </apex:outputPanel>       -->
                 
-                <apex:pageBlock rendered="{!isFight}">
+                <apex:pageBlock rendered="{!isFight}" >
                     <apex:pageBlockSection >
-                        <apex:selectRadio value="{!hit}" >
+                        <apex:selectRadio value="{!hit}" legendText="Hit">
                             <apex:selectOptions value="{!place}"/>
                         </apex:selectRadio><p/>
-                        <apex:selectRadio value="{!block}" >
+                        <apex:selectRadio value="{!block}" legendText="Block">
                             <apex:selectOptions value="{!place}"/>
                         </apex:selectRadio><p/>
                         <apex:commandButton value="Make hit!" action="{!makeHit}" rerender="panel"/>  

@@ -1,17 +1,17 @@
-/**
-*This is a custom controller of the VF Page Game
-*/
-
 public class GameController {
 
+    /*
+    *This is a custom controller of the VF Page Game
+    */
+    
     public Unit__c winner1{get;set;}
     public Unit__c winner2{get;set;}
     public Unit__c unit {get;set;}
     
-    public Unit winner{get;set;}
     public Unit unit1{get;set;}
     public Unit unit2{get;set;}
     public Integer damage{get;set;}
+    public Integer forRandomHitTest{get;set;}
     public String log{get;set;}
     public String whereHit{get;set;}
     public String hit{get;set;}
@@ -20,11 +20,11 @@ public class GameController {
         
     public List<Wrapper> unitsList{get;set;} 
     public List<Unit__c> fightersList {get;set;}
-    public List<String> fightLog {get;set;}
+    //public List<String> fightLog {get;set;}  //not used yet
     public boolean isVisible {get;set;}
     public boolean addNewFighter {get;set;}
     public boolean choseFighters {get;set;}
-    public boolean isFightLog {get;set;}  //not used yet
+    //public boolean isFightLog {get;set;}  //not used yet
     public boolean isFight {get;set;}
     public Integer round = 1;
     
@@ -74,6 +74,7 @@ public class GameController {
     *This method takes information from DB and creates Wrapper class objects
     *Wrapper class can also define the activity of the checkbox depending on its lose date (Lose_Date__c)
     */
+    @TestVisible
     private List<wrapper> getUnits()
     {
         List<Wrapper> unitsList = new List<Wrapper>();
@@ -137,7 +138,7 @@ public class GameController {
         choseFighters = true;
         addNewFighter = false;
         isVisible = false;
-        isFightLog = false; 
+        //isFightLog = false; //not used yet
                   
         return null;
     }
@@ -159,6 +160,7 @@ public class GameController {
         }
         if(fightersList.size() == 2)
         {
+            isVisible = true;
             isFight = true;
             createUnits(fightersList.get(0), fightersList.get(1));
             winner1 = fightersList.get(0);
@@ -166,7 +168,7 @@ public class GameController {
             message = unit1.getName() + ' VS ' + unit2.getNAme();
             choseFighters = false;
             addNewFighter = false;
-            isFightLog = true;  //not used yet
+            //isFightLog = true;  //not used yet
             update fightersList;
             fightersList = new List<Unit__c>();
             unitsList = getUnits();
@@ -176,7 +178,7 @@ public class GameController {
             ApexPages.addmessage(new ApexPages.message(ApexPages.severity.FATAL, 'You have to chose 2 fighters!'));
             choseFighters = true;
             addNewFighter = false;
-            isFightLog = false;
+            //isFightLog = false;  //not used yet
         }
         return null;
     }
@@ -184,7 +186,7 @@ public class GameController {
     /**
     *This method creates units
     */
-    private void createUnits(Unit__c fighter1, Unit__c fighter2)
+    public void createUnits(Unit__c fighter1, Unit__c fighter2)
     {
         unit1 = new Unit();
         unit1.setName(fighter1.name);
@@ -199,6 +201,12 @@ public class GameController {
     }
     
     public PageReference makeHit() {
+    
+        if(hit == NULL || block == NULL)
+        {
+            ApexPages.addmessage(new ApexPages.message(ApexPages.severity.FATAL, 'Please, make hit and block!'));
+            return null;
+        }
         log = fight(unit1, unit2);    
         
         return null;
@@ -219,6 +227,7 @@ public class GameController {
         
             if (hit != PCBlock.getValue() && block != PCHit.getValue()) // both fighters hit
             {
+                forRandomHitTest = 1;
                 log ='Round ' + round + ' ' + unit1.getName() + ' HP left: ' + unit1.getHp() + ' ' +
                       unit2.getName() + ' HP left: ' + unit2.getHp();
                 whereHit = hit;            
@@ -229,8 +238,9 @@ public class GameController {
                 damage = hitStrike(unit2, unit1);
                 unit1.setHp(unit1.getHp() - damage);
             }
-            else if (hit != PCBlock.getValue() && block == PCHit.getValue()) // only unit 1 hits, unit2 blocks
+            else if (hit != PCBlock.getValue() && block == PCHit.getValue()) // only unit 1 hits
             {
+                forRandomHitTest = 2;
                 log ='Round ' + round + ' ' + unit1.getName() + ' HP left: ' + unit1.getHp() + ' ' +
                       unit2.getName() + ' HP left: ' + unit2.getHp();
                             
@@ -240,8 +250,9 @@ public class GameController {
                             
                 log += ' ' + unit1.getName() + ' blocks the hit!' + ' ';
             }     
-            else if (hit == PCBlock.getValue() && block != PCHit.getValue()) // only unit1 hits, unit1 blocks
+            else if (hit == PCBlock.getValue() && block != PCHit.getValue()) // only unit 2 hits
             {
+                forRandomHitTest = 3;
                 log ='Round ' + round + ' ' + unit1.getName() + ' HP left: ' + unit1.getHp() + ' ' +
                       unit2.getName() + ' HP left: ' + unit2.getHp();
                             
@@ -253,6 +264,7 @@ public class GameController {
             }
             else // both units block
             {
+                forRandomHitTest = 4;
                 log ='Round ' + round + ' ' + unit1.getName() + ' HP left: ' + unit1.getHp() + ' ' +
                       unit2.getName() + ' HP left: ' + unit2.getHp() + ' ' + 
                       unit1.getName() + ' blocks the hit!' + unit2.getName() + ' blocks the hit!';
@@ -263,33 +275,20 @@ public class GameController {
         }
         else if (unit1.getHp() > 0 && unit2.getHp() <= 0)
         {
-            winner = unit1;
+            winner2.Lose_Date__c = Date.today();
             message = unit1.getName() + ' wins';
         }
         else if(unit2.getHp() > 0 && unit1.getHp() <= 0)
         {
-            winner = unit2;
+            winner1.Lose_Date__c = Date.today();
             message = unit2.getName() + ' wins';
         }
         else
         {
-            winner = NULL;
+            winner1.Lose_Date__c = Date.today();
+            winner2.Lose_Date__c = Date.today();
             message = 'It was a great fight! Both fighters were killed!';
         }    
-        
-        if(winner.equals(unit1))
-        {
-            winner2.Lose_Date__c = Date.today();
-        }
-        else if(winner.equals(unit2))
-        {
-            winner1.Lose_Date__c = Date.today();
-        }
-        else
-        {
-            winner1.Lose_Date__c = Date.today();
-            winner2.Lose_Date__c = Date.today();
-        }
         
         update winner1;
         update winner2;
