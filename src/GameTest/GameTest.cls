@@ -1,5 +1,5 @@
 @isTest
-public class GameTest {
+private class GameTest {
     @isTest private static void createUnitsTest()
     {
         GameController game = new GameController();
