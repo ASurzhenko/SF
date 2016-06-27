@@ -28,7 +28,7 @@ public class GameController {
     public boolean isFight {get;set;}
     public Integer round = 1;
     
-    public String getLog() {
+    public String getLog() { 
         return log;
     }   
     
