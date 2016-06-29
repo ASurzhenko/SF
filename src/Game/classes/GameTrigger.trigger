@@ -16,25 +16,25 @@ trigger GameTrigger on Unit__c (before update, before insert) {
         
         if (fireTrigger)
         {
-        	List<Unit__c> unitsList = [SELECT Id, Name, HP__c, Lose_Date__c, Max_Damage__c, Min_Damage__c,
+            List<Unit__c> unitsList = [SELECT Id, Name, HP__c, Lose_Date__c, Max_Damage__c, Min_Damage__c,
             	                       Ressurection_Date__c, Top_Position__c, Victory_Quantity__c 
-                	                   FROM Unit__c WHERE Id NOT IN : unitsMap.keySet()];
-        	List<Unit__c> allUnits = new List<Unit__c> ();
-        	allUnits.addAll(unitsList);
-        	allUnits.addAll(unitsMap.values());
+                                       FROM Unit__c WHERE Id NOT IN : unitsMap.keySet()];
+            List<Unit__c> allUnits = new List<Unit__c> ();
+            allUnits.addAll(unitsList);
+            allUnits.addAll(unitsMap.values());
 
             List<SortClass> unitsToSortList = new List<SortClass>();
         
-        	for (Unit__c item : allUnits) 
-        	{
+            for (Unit__c item : allUnits) 
+            {
             	unitsToSortList.add(new SortClass(item));
-        	}
+            }
         
-        	unitsToSortList.sort();
+            unitsToSortList.sort();
         
-        	List<Unit__c> unitsToUpdate = new List<Unit__c>();
-        	Integer position = 0;
-        	for (SortClass item : unitsToSortList) 
+            List<Unit__c> unitsToUpdate = new List<Unit__c>();
+            Integer position = 0;
+            for (SortClass item : unitsToSortList) 
             {
                 position ++;
                 Unit__c unit = item.getUnit();
@@ -48,9 +48,9 @@ trigger GameTrigger on Unit__c (before update, before insert) {
                 {
                     unitsToUpdate.add(unit);
                 }
-    		}
+    	    }
             
             update unitsToUpdate;
         }
-	}        
+    }        
 }
