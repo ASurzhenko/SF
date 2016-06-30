@@ -16,8 +16,7 @@ trigger GameTrigger on Unit__c (before update, before insert) {
         
         if (fireTrigger)
         {
-            List<Unit__c> unitsList = [SELECT Id, Name, HP__c, Lose_Date__c, Max_Damage__c, Min_Damage__c,
-            	                       Ressurection_Date__c, Top_Position__c, Victory_Quantity__c 
+            List<Unit__c> unitsList = [SELECT Id, Top_Position__c, Victory_Quantity__c 
                                        FROM Unit__c WHERE Id NOT IN : unitsMap.keySet()];
             List<Unit__c> allUnits = new List<Unit__c> ();
             allUnits.addAll(unitsList);
