@@ -1,11 +1,11 @@
-<apex:page controller="GameController" showHeader="true" sidebar="false"> 
+<apex:page controller="GameController" showHeader="true" sidebar="false">
     <apex:form >
         <apex:outputPanel id="panel">
             <apex:pageBlock title="Welcome to Fight Club">
                 <h3>{!message}</h3>
                 <apex:pageBlockButtons >
-                    <apex:commandButton value="Add new" action="{!addFighter}" rerender="panel" disabled="{!isVisible}"/>
-                    <apex:commandButton value="Fight!" action="{!goFight}" rerender="panel" disabled="{!isVisible}"/>
+                    <apex:commandButton value="Add new" action="{!addFighter}" rerender="panel" disabled="{!isNotVisible}"/>
+                    <apex:commandButton value="Fight!" action="{!goFight}" rerender="panel" disabled="{!isNotVisible}"/>
                 </apex:pageBlockButtons>
                 
                 <apex:pageMessages ></apex:pageMessages>   
@@ -14,7 +14,7 @@
                     <apex:pageBlock title="Fighters">                     
                         <apex:pageBlockTable value="{!unitsList}" var="item">
                             <apex:column headerValue="Chose Fighter">
-                                <apex:inputCheckbox disabled="{!item.isNotActive}" value="{!item.isSelected}"/>
+                                <apex:inputCheckbox disabled="{!item.isNotActive}" value="{!item.isSelected}"/>  
                             </apex:column>
                             <apex:column headerValue="Name">
                                  <apex:outputField value="{!item.unit.name}"/>
@@ -28,8 +28,17 @@
                             <apex:column headerValue="Max Damage">
                                 <apex:outputText value="{!item.unit.Max_Damage__c}"/>
                             </apex:column>
-                            <apex:column headerValue="Resurrection Date" >
-                                <apex:outputText value="{!item.unit.Ressurection_Date__c}"/>
+                            <apex:column headerValue="Stamina" >
+                                <apex:outputText value="{!item.unit.Stamina__c}"/>  
+                            </apex:column>
+                            <apex:column headerValue="All Games" >
+                                <apex:outputText value="{!item.unit.Games_Quantity__c}"/>
+                            </apex:column>   
+                            <apex:column headerValue="Victories" >
+                                <apex:outputText value="{!item.unit.Victory_Quantity__c}"/>
+                            </apex:column>
+                            <apex:column headerValue="Position" >
+                                <apex:outputText value="{!item.unit.Top_Position__c}"/>  
                             </apex:column>
                         </apex:pageBlockTable>  
                     </apex:pageBlock>

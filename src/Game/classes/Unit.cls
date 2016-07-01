@@ -1,3 +1,6 @@
+/**
+ * This class for creating units
+*/
 public class Unit 
 {
     public String name{get;set;}

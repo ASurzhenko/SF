@@ -1,3 +1,10 @@
+/**
+ * This is before update and before insert trigger on Unit__c
+ * Trigger fires if the field Victory_Quantity__c was changed
+ * and changes the Top_Position__c field according to Victories quantity and all games of player
+ * To sort units it uses SortClass
+*/
+
 trigger GameTrigger on Unit__c (before update, before insert) {
 
     Map<Id, Unit__c> unitsMap = new Map<Id, Unit__c>();
@@ -16,7 +23,7 @@ trigger GameTrigger on Unit__c (before update, before insert) {
         
         if (fireTrigger)
         {
-            List<Unit__c> unitsList = [SELECT Id, Top_Position__c, Victory_Quantity__c 
+            List<Unit__c> unitsList = [SELECT Id, Top_Position__c, Victory_Quantity__c, Games_Quantity__c
                                        FROM Unit__c WHERE Id NOT IN : unitsMap.keySet()];
             List<Unit__c> allUnits = new List<Unit__c> ();
             allUnits.addAll(unitsList);
@@ -26,7 +33,7 @@ trigger GameTrigger on Unit__c (before update, before insert) {
         
             for (Unit__c item : allUnits) 
             {
-            	unitsToSortList.add(new SortClass(item));
+                unitsToSortList.add(new SortClass(item));
             }
         
             unitsToSortList.sort();
@@ -47,7 +54,7 @@ trigger GameTrigger on Unit__c (before update, before insert) {
                 {
                     unitsToUpdate.add(unit);
                 }
-    	    }
+            }
             
             update unitsToUpdate;
         }

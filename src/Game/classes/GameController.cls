@@ -1,9 +1,9 @@
+/**
+ * This is a custom controller of the VF Page Game
+*/
+
 public class GameController {
 
-    /*
-    *This is a custom controller of the VF Page Game
-    */
-    
     public Unit__c winner1{get;set;}
     public Unit__c winner2{get;set;}
     public Unit__c unit {get;set;}
@@ -21,14 +21,14 @@ public class GameController {
     public List<Wrapper> unitsList{get;set;} 
     public List<Unit__c> fightersList {get;set;}
     //public List<String> fightLog {get;set;}  //not used yet
-    public boolean isVisible {get;set;}
+    public boolean isNotVisible {get;set;}
     public boolean addNewFighter {get;set;}
     public boolean choseFighters {get;set;}
     //public boolean isFightLog {get;set;}  //not used yet
     public boolean isFight {get;set;}
     public Integer round = 1;
     
-    public String getLog() { 
+    public String getLog() {
         return log;
     }   
     
@@ -59,7 +59,7 @@ public class GameController {
     }
     
     /**
-    *This is list type SelectOption for radiobuttons
+     * This is list type SelectOption for radiobuttons
     */
     public List<SelectOption> getPlace() {
         List<SelectOption> options = new List<SelectOption>(); 
@@ -71,15 +71,16 @@ public class GameController {
     }          
 
     /**
-    *This method takes information from DB and creates Wrapper class objects
-    *Wrapper class can also define the activity of the checkbox depending on its lose date (Lose_Date__c)
+     * This method takes information from DB and creates Wrapper class objects
+     * Wrapper class can also define the activity of the checkbox depending on its stamina (Stamina__c)
     */
     @TestVisible
     private List<wrapper> getUnits()
     {
         List<Wrapper> unitsList = new List<Wrapper>();
         for(Unit__c u : [SELECT Name, HP__c, Min_Damage__c, Max_Damage__c, 
-                                Lose_Date__c, Ressurection_Date__c FROM Unit__c])
+                                Lose_Date__c, Ressurection_Date__c, Victory_Quantity__c, Games_Quantity__c, 
+                                Top_Position__c, Stamina__c FROM Unit__c])
         {
             unitsList.add(new Wrapper(u, false));
         }
@@ -94,40 +95,46 @@ public class GameController {
         
         public Wrapper(Unit__c unit, boolean isSelected) 
         {
-            Date today = Date.today();
-            if(unit.Lose_Date__c != null)
+        // this is an old logic, not actual now    
+        /*    Date today = Date.today();    
+            if(unit.Lose_Date__c != NULL)
             {
                 unit.Ressurection_Date__c = unit.Lose_Date__c.addDays(1);
                 if(unit.Lose_Date__c.daysBetween(today) <= 1)
                 {
-                    isNotActive = true;
+                    //isNotActive = true;
                 }
                 else
                 {
                     unit.Ressurection_Date__c = NULL;    
-                } 
-            }
+                }
+            }   */
            
+            if(unit.Stamina__c <= 0)
+            {
+                isNotActive = true;    
+            }
+            
             this.unit = unit;
             this.isSelected = isSelected;
         } 
     }
 
     /**
-    *This method allows users create and add new fighter in game
+     * This method allows users create and add new fighter in game
     */
     public PageReference addFighter()
     {
         fightersList = new List<Unit__c>();
         unitsList = getUnits();
         choseFighters = false;
-        isVisible = true;
+        isNotVisible = true;
         addNewFighter = true;
         return null;
     }
 
     /**
-    *This method adds new record
+     * This method adds new record
     */
     public PageReference newFighter()
     {
@@ -137,16 +144,16 @@ public class GameController {
         unitsList = getUnits();
         choseFighters = true;
         addNewFighter = false;
-        isVisible = false;
+        isNotVisible = false;
         //isFightLog = false; //not used yet
                   
         return null;
     }
     
     /**
-    *This method starts the game.
-    *It checks the correct number of fighters (it can be only 2) and returns an error if there are more or less
-    *then 2 fighters checked 
+     * This method starts the game.
+     * It checks the correct number of fighters (it can be only 2) and returns an error if there are more or less
+     * then 2 fighters checked 
     */
     public PageReference goFight()
     {
@@ -160,7 +167,7 @@ public class GameController {
         }
         if(fightersList.size() == 2)
         {
-            isVisible = true;
+            isNotVisible = true;
             isFight = true;
             createUnits(fightersList.get(0), fightersList.get(1));
             winner1 = fightersList.get(0);
@@ -184,7 +191,7 @@ public class GameController {
     }
     
     /**
-    *This method creates units
+     * This method creates units
     */
     public void createUnits(Unit__c fighter1, Unit__c fighter2)
     {
@@ -200,6 +207,10 @@ public class GameController {
         unit2.setDmgMax((Integer)fighter2.Max_Damage__c);
     }
     
+    /**
+     * This method starts fight method and returns an error if hit or block radiobutton
+     * wasn't checked 
+    */ 
     public PageReference makeHit() {
     
         if(hit == NULL || block == NULL)
@@ -213,8 +224,9 @@ public class GameController {
     }
     
     /**
-    *this method starts hitStrike method, calculate fighter's HP and returns log ot the current round
-    *Also the method defines winner 
+    * This method starts hitStrike method, calculate fighter's HP and returns log ot the current round
+    * Also the method defines winner, changes stamina (Stamina__c) and game quantity (Game_Quantity__c)
+    * of units 
     */
     public String fight(Unit unit1, Unit unit2)
     {
@@ -275,24 +287,30 @@ public class GameController {
         }
         else if (unit1.getHp() > 0 && unit2.getHp() <= 0)
         {
-            winner2.Lose_Date__c = Date.today();
+            winner2.Stamina__c = 10;
             message = unit1.getName() + ' wins';
+            winner1.Victory_Quantity__c ++;
         }
         else if(unit2.getHp() > 0 && unit1.getHp() <= 0)
         {
-            winner1.Lose_Date__c = Date.today();
+            winner1.Stamina__c = 10;
             message = unit2.getName() + ' wins';
+            winner2.Victory_Quantity__c ++;
         }
         else
         {
-            winner1.Lose_Date__c = Date.today();
-            winner2.Lose_Date__c = Date.today();
+            winner1.Stamina__c = 10;
+            winner2.Stamina__c = 10;
             message = 'It was a great fight! Both fighters were killed!';
         }    
-        
+        winner1.Stamina__c -= 10;
+        winner2.Stamina__c -= 10;
+        winner1.Games_Quantity__c ++;
+        winner2.Games_Quantity__c ++;
         update winner1;
         update winner2;
         unitsList = getUnits();
+        isNotVisible = false;
         round = 1;
         choseFighters = true;
         isFight = false;      
@@ -300,13 +318,13 @@ public class GameController {
     }
     
     /**
-    *this method returns damage
-    *unit 1 makes a hit
-    *unit 2 defences
-    *Also method sets if fighter miss, make a crit or make a normal hit
-    *fighter can miss the target in 25% cases and
-    *make crit in 10% cases
-    *crit = demage * 2
+    * This method returns damage
+    * unit 1 makes a hit
+    * unit 2 defences
+    * Also method defines if fighter misses, makes a crit or makes a normal hit
+    * Fighter can miss the target in 25% cases and
+    * make crit in 10% cases
+    * crit = demage * 2
     */
     public Integer hitStrike(Unit unit1, Unit unit2)
     {
