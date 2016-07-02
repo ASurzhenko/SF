@@ -1,11 +1,12 @@
 /**
- * This is global GameBatch class
+ * This is global GameScheduleBatch class
  * When we execute the class, it changes Stamina__c field from List of units (List<Unit__c> unitsToUpdateList)
  * if Stamina__c < 100
- * In finish method System.scheduleBatch will run and the job will be created that will execute GameBatch class 
- * again in 180 minutes, so the GameBatch class will execute every 180 minutes   
+ * We will execute this batch from ScheduleGameUpdate class by using System.schedule() method
+ * System.schedule() method will create a job to execute this class every day in midnight:
+ * System.schedule('Update unit stamina', '0 0 0 * * ?', new ScheduleGameUpdate());   
 */
-global class GameBatch implements Database.Batchable<sObject>
+global class GameScheduleBatch implements Database.Batchable<sObject>
 {
 	global Database.QueryLocator start(Database.BatchableContext BC)
     {
@@ -19,7 +20,7 @@ global class GameBatch implements Database.Batchable<sObject>
         
         for(Unit__c item : (List<Unit__c>) scope)
         {
-            item.Stamina__c += 10;   
+            item.Stamina__c = 100;   
             unitsToUpdateList.add(item);
         }
         
@@ -28,6 +29,6 @@ global class GameBatch implements Database.Batchable<sObject>
     
     global void finish(Database.BatchableContext BC)
     {	
-    	System.scheduleBatch(new GameBatch(), 'Stamina changes', 180);
+    	
     }
 }
