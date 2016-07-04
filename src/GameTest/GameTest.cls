@@ -1,5 +1,5 @@
 @isTest
-private class GameTest {
+public class GameTest {
     @isTest private static void createUnitsTest()
     {
         GameController game = new GameController();
@@ -13,25 +13,6 @@ private class GameTest {
         System.assertEquals(600, unit.getHp());
         System.assertEquals(10, unit.getDmgMin());
         System.assertEquals(30, unit.getDmgMax());
-    }
-    
-    @isTest private static void ressurectionDateNotNullTest()
-    {
-        Unit__c fighter1 = new Unit__c(Name = 'test unit1', HP__c = 600, Min_Damage__c = 10, Max_Damage__c = 30);
-        fighter1.Lose_Date__c = Date.today();
-                
-        Gamecontroller.Wrapper gameWrap = new GameController.Wrapper(fighter1, false);
-       	Gamecontroller game = new Gamecontroller();
-        System.assertEquals(Date.today().addDays(1), fighter1.Ressurection_Date__c);
-    }
-    
-    @isTest private static void ressurectionDateNullTest()
-    {
-		Unit__c fighter1 = new Unit__c(Name = 'test unit1', HP__c = 600, Min_Damage__c = 10, Max_Damage__c = 30);
-        fighter1.Lose_Date__c = Date.today().addDays(-5);
-        
-        Gamecontroller.Wrapper gameWrap = new GameController.Wrapper(fighter1, false);
-        System.assertEquals(NULL, fighter1.Ressurection_Date__c);
     }
     
     @isTest private static void createSelectOptionListForRadiobuttonsTest()
@@ -49,7 +30,7 @@ private class GameTest {
         game.addFighter();
         System.assertEquals(1, game.unitsList.size());
         System.assertEquals(false, game.choseFighters);
-        System.assertEquals(true, game.isVisible);
+        //System.assertEquals(true, game.isVisible);
         System.assertEquals(true, game.addNewFighter);
     }
     
@@ -167,8 +148,10 @@ private class GameTest {
     @isTest private static void winner1Test()
     {
     	GameController game = new GameController();
-        Unit__c fighter1 = new Unit__c(Name = 'test unit1', HP__c = 600, Min_Damage__c = 10, Max_Damage__c = 30);
-        Unit__c fighter2 = new Unit__c(Name = 'test unit2', HP__c = -20, Min_Damage__c = 20, Max_Damage__c = 40);
+        Unit__c fighter1 = new Unit__c(Name = 'test unit1', HP__c = 600, Min_Damage__c = 10, Max_Damage__c = 30,
+                                      Victory_Quantity__c = 3, Stamina__c = 80, Games_Quantity__c = 10);
+        Unit__c fighter2 = new Unit__c(Name = 'test unit2', HP__c = -20, Min_Damage__c = 20, Max_Damage__c = 40,
+                                      Victory_Quantity__c = 1, Stamina__c = 50, Games_Quantity__c = 13);
         insert fighter1;
         insert fighter2;
         game.winner1 = fighter1;
@@ -183,8 +166,10 @@ private class GameTest {
     @isTest private static void winner2Test()
     {
     	GameController game = new GameController();
-        Unit__c fighter1 = new Unit__c(Name = 'test unit1', HP__c = 0, Min_Damage__c = 10, Max_Damage__c = 30);
-        Unit__c fighter2 = new Unit__c(Name = 'test unit2', HP__c = 600, Min_Damage__c = 20, Max_Damage__c = 40);
+        Unit__c fighter1 = new Unit__c(Name = 'test unit1', HP__c = 0, Min_Damage__c = 10, Max_Damage__c = 30,
+                                      Victory_Quantity__c = 3, Stamina__c = 80, Games_Quantity__c = 10);
+        Unit__c fighter2 = new Unit__c(Name = 'test unit2', HP__c = 600, Min_Damage__c = 20, Max_Damage__c = 40,
+                                      Victory_Quantity__c = 1, Stamina__c = 50, Games_Quantity__c = 13);
         insert fighter1;
         insert fighter2;
         game.winner1 = fighter1;
@@ -199,8 +184,10 @@ private class GameTest {
     @isTest private static void nobodyWinsTest()
     {
     	GameController game = new GameController();
-        Unit__c fighter1 = new Unit__c(Name = 'test unit1', HP__c = -10, Min_Damage__c = 10, Max_Damage__c = 30);
-        Unit__c fighter2 = new Unit__c(Name = 'test unit2', HP__c = -20, Min_Damage__c = 20, Max_Damage__c = 40);
+        Unit__c fighter1 = new Unit__c(Name = 'test unit1', HP__c = -10, Min_Damage__c = 10, Max_Damage__c = 30,
+                                      Games_Quantity__c = 3);
+        Unit__c fighter2 = new Unit__c(Name = 'test unit2', HP__c = -20, Min_Damage__c = 20, Max_Damage__c = 40,
+                                      Games_Quantity__c = 1);
         insert fighter1;
         insert fighter2;
         game.winner1 = fighter1;
