@@ -1,43 +1,13 @@
 public class Order 
 {
-    private String id;
-    private String name;
-    private Company company;
+    public String id{get;set;}
+    public String name{get;set;}
+    public Account company{get;set;}
     
-    public Order(String id, String name, Company company)
+    public Order(String id, String name, Account company)
     {
-    	this.id = id;
+        this.id = id;
         this.name = name;
-    	this.company = company;
-    }
-    
-    public String getId()
-    {
-    	return id;
-    }
-
-    public void setId(String id)
-    {
-    	this.id = id;
-    }
-    
-    public String getName()
-    {
-    	return name;
-    }
-
-    public void setName(String name)
-    {
-    	this.name = name;
-    }
-    
-     public Company getCompany()
-    {
-    	return company;
-    }
-
-    public void setCompany(Company company)
-    {
-    	this.company = company;
+        this.company = company;
     }
 }

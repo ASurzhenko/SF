@@ -1,9 +1,9 @@
 public class Rate 
 {
-	private String id;
-    private String name;
-    private Integer revenue;
-    private Integer margin;
+    public String id{get;set;}
+    public String name{get;set;}
+    public Integer revenue{get;set;}
+    public Integer margin{get;set;}
     
     public Rate(String id, String name, Integer revenue, Integer margin)
     {
@@ -11,45 +11,5 @@ public class Rate
         this.name = name;
         this.revenue = revenue;
         this.margin = margin;
-    }
-    
-    public String getId()
-    {
-    	return id;
-    }
-
-    public void setId(String id)
-    {
-    	this.id = id;
-    }
-    
-     public String getName()
-    {
-    	return name;
-    }
-
-    public void setName(String name)
-    {
-    	this.name = name;
-    }
-    
-    public Integer getRevenue()
-    {
-    	return revenue;
-    }
-
-    public void setRevenue(Integer revenue)
-    {
-    	this.revenue = revenue;
-    }
-
-    public Integer getMargin()
-    {
-    	return margin;
-    }
-
-    public void setMargin(Integer margin)
-    {
-    	this.margin = margin;
     }
 }
