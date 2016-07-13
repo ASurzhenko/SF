@@ -6,7 +6,8 @@
 @isTest
 public class AccountsCheckTest {
 	
-    @isTest private static void noResultTest()
+    @isTest 
+    private static void noResultTest()
     {
         Account ac1 = new Account(Name = 'tect acc1', Phone = '123456');
         Account ac2 = new Account(Name = 'tect acc2', Phone = '456789');
@@ -20,7 +21,8 @@ public class AccountsCheckTest {
         System.assertEquals('No Account is in process!', ac.result);
     }
     
-    @isTest private static void oneResultTest()
+    @isTest 
+    private static void oneResultTest()
     {
         Account ac1 = new Account(Name = 'tect acc1', Phone = '123456');
         Account ac2 = new Account(Name = 'tect acc2', Phone = '456789');
@@ -39,7 +41,8 @@ public class AccountsCheckTest {
         System.assertEquals(1, ac.toProcess.size());
     }
     
-    @isTest private static void someResultsTest()
+    @isTest 
+    private static void someResultsTest()
     {
         Account ac1 = new Account(Name = 'tect acc1', Phone = '123456');
         Account ac2 = new Account(Name = 'tect acc2', Phone = '456789');
