@@ -11,7 +11,8 @@
 @isTest
 public class CompaniesControllerTest {
 
-    @TestSetup private static void dataCreation()
+    @TestSetup 
+    private static void dataCreation()
     {
         List<Account> accountList = new List<Account>();
         for (Integer i = 0; i < 20; i++)
@@ -56,7 +57,8 @@ public class CompaniesControllerTest {
                                       Date.today(), Date.today().addDays(30));
     }
     
-    @isTest private static void companiesControllerTest()
+    @isTest 
+    private static void companiesControllerTest()
     {
         List<Account> accList = [SELECT Id,Name FROM Account];
         CompaniesController cc = new CompaniesController();
