@@ -10,9 +10,10 @@
  * Unit - 100%
 */
 @isTest
-public class GameTest {
+private class GameTest {
     
-    @isTest private static void addFighterTest()
+    @isTest 
+    private static void addFighterTest()
     {
         Unit__c fighter1 = new Unit__c(Name = 'test unit1', HP__c = 600, Min_Damage__c = 10, Max_Damage__c = 30);
         insert fighter1;
@@ -23,7 +24,8 @@ public class GameTest {
         System.assertEquals(true, game.addNewFighter);
     }
     
-	@isTest private static void CorrectNumbersOfFightersTest()    
+    @isTest 
+    private static void CorrectNumbersOfFightersTest()    
     {
         GameController game = new GameController();
         Unit__c fighter1 = new Unit__c(Name = 'test unit1', HP__c = 600, Min_Damage__c = 10, Max_Damage__c = 30);
@@ -37,7 +39,8 @@ public class GameTest {
         game.goFight();
     } 
 
-	@isTest private static void notCorrectNumbersOfFightersTest()    
+    @isTest 
+    private static void notCorrectNumbersOfFightersTest()    
     {
         GameController game = new GameController();
         Unit__c fighter1 = new Unit__c(Name = 'test unit1', HP__c = 600, Min_Damage__c = 10, Max_Damage__c = 30);
@@ -51,13 +54,15 @@ public class GameTest {
         game.goFight();
     }
     
-    @isTest private static void makeHitErrorTest()
+    @isTest 
+    private static void makeHitErrorTest()
     {
         GameController game = new GameController();
         game.makeHit();
     }
     
-    @isTest private static void bothFightersMakeHitTest()
+    @isTest 
+    private static void bothFightersMakeHitTest()
     {
         GameController game = new GameController();
         Unit__c fighter1 = new Unit__c(Name = 'test unit1', HP__c = 600, Min_Damage__c = 10, Max_Damage__c = 30);
@@ -76,7 +81,8 @@ public class GameTest {
         System.assertEquals('Head', game.Hit);
     }
     
-    @isTest private static void onlySomeFighterMakesHitTest()
+    @isTest 
+    private static void onlySomeFighterMakesHitTest()
     {
         GameController game = new GameController();
         Unit__c fighter1 = new Unit__c(Name = 'test unit1', HP__c = 600, Min_Damage__c = 10, Max_Damage__c = 30);
@@ -96,7 +102,8 @@ public class GameTest {
         }
     }
     
-    @isTest private static void onlySomeAnotherFighterMakesHitTest()
+    @isTest 
+    private static void onlySomeAnotherFighterMakesHitTest()
     {
         GameController game = new GameController();
         Unit__c fighter1 = new Unit__c(Name = 'test unit1', HP__c = 600, Min_Damage__c = 10, Max_Damage__c = 30);
@@ -117,7 +124,8 @@ public class GameTest {
         }
     }   
     
-    @isTest private static void bothFightersBlockTheHitTest()
+    @isTest 
+    private static void bothFightersBlockTheHitTest()
     {
         GameController game = new GameController();
         Unit__c fighter1 = new Unit__c(Name = 'test unit1', HP__c = 600, Min_Damage__c = 10, Max_Damage__c = 30,
@@ -140,7 +148,8 @@ public class GameTest {
         }
     }
     
-    @isTest private static void winner1Test()
+    @isTest 
+    private static void winner1Test()
     {
     	GameController game = new GameController();
         Unit__c fighter1 = new Unit__c(Name = 'test unit1', HP__c = 600, Min_Damage__c = 10, Max_Damage__c = 30,
@@ -167,7 +176,8 @@ public class GameTest {
         game.fight(unit1, unit2);
     }
     
-    @isTest private static void winner2Test()
+    @isTest 
+    private static void winner2Test()
     {
     	GameController game = new GameController();
         Unit__c fighter1 = new Unit__c(Name = 'test unit1', HP__c = 600, Min_Damage__c = 10, Max_Damage__c = 30,
@@ -197,7 +207,8 @@ public class GameTest {
         game.fight(unit1, unit2);
     }
     
-    @isTest private static void nobodyWinsTest()
+    @isTest 
+    private static void nobodyWinsTest()
     {
     	GameController game = new GameController();
         Unit__c fighter1 = new Unit__c(Name = 'test unit1', HP__c = 600, Min_Damage__c = 10, Max_Damage__c = 30,
@@ -224,14 +235,16 @@ public class GameTest {
         game.fight(unit1, unit2);
     }
     
-    @isTest private static void addNewRecordTest()
+    @isTest 
+    private static void addNewRecordTest()
     {
     	GameController game = new GameController();
         game.unit = new Unit__c(Name = 'test unit1', HP__c = 1000, Min_Damage__c = 10, Max_Damage__c = 30);
         game.newFighter();
     }
     
-    @isTest private static void gameBatchTest()
+    @isTest 
+    private static void gameBatchTest()
     {
         Unit__c fighter1 = new Unit__c(Name = 'test unit1', HP__c = 600, Min_Damage__c = 10, Max_Damage__c = 30,
                                       Victory_Quantity__c = 0, Stamina__c = 80, Games_Quantity__c = 0);
@@ -243,7 +256,8 @@ public class GameTest {
         Database.executeBatch(batch);
     }
     
-    @isTest private static void GameScheduleBatchTest()
+    @isTest 
+    private static void GameScheduleBatchTest()
     {
         Unit__c fighter1 = new Unit__c(Name = 'test unit1', HP__c = 600, Min_Damage__c = 10, Max_Damage__c = 30,
                                       Victory_Quantity__c = 0, Stamina__c = 80, Games_Quantity__c = 0);
