@@ -4,7 +4,7 @@
 */
 
 @isTest
-public class AccountsCheckTest {
+private class AccountsCheckTest {
 	
     @isTest 
     private static void noResultTest()
