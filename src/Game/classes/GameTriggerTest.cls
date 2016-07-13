@@ -1,7 +1,9 @@
 @isTest
-public with sharing class GameTriggerTest {
+private class GameTriggerTest 
+{
     @testSetup
-    static void setup() {
+    private static void setup() 
+    {
         
         Unit__c fighter1 = new Unit__c(Name = 'test unit1', HP__c = 600, Min_Damage__c = 10, Max_Damage__c = 30, 
                                        Victory_Quantity__c = 0, Top_Position__c = 0);
@@ -16,7 +18,8 @@ public with sharing class GameTriggerTest {
         insert updateList;
     }
     
-    @isTest private static void triggerTest()
+    @isTest 
+    private static void triggerTest()
     {
         List<Unit__c> beforeUpdateList = [SELECT Id, Name, Victory_Quantity__c, Top_Position__c FROM Unit__c 
                                           WHERE Name IN ('test unit1', 'test unit2', 'test unit3')];
