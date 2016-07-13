@@ -9,7 +9,7 @@
 */
 
 @isTest
-public class CompaniesControllerTest {
+private class CompaniesControllerTest {
 
     @TestSetup 
     private static void dataCreation()
